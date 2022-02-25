@@ -38,20 +38,20 @@
 
 // Starships fetch
 
-let starshipsArray = [];
+// let starshipsArray = [];
 
-let starshipsRequest = `https://swapi.dev/api/starships/`;
-fetch(starshipsRequest).then((response) => {
-    return response.json();
-}).then((data) => {
-    starshipsArray = starshipsArray.concat(data.results);
-})
+// let starshipsRequest = `https://swapi.dev/api/starships/`;
+// fetch(starshipsRequest).then((response) => {
+//     return response.json();
+// }).then((data) => {
+//     starshipsArray = starshipsArray.concat(data.results);
+// })
 
-for (let i = 2; i < 5; i++) {
-    let starshipsRequest = `https://swapi.dev/api/starships/?page=${i}`;
-    fetch(starshipsRequest).then((response) => {
-        return response.json();
-    }).then((data) => {
-        starshipsArray = starshipsArray.concat(data.results);
-    })
-}
+// for (let i = 2; i < 5; i++) {
+//     let starshipsRequest = `https://swapi.dev/api/starships/?page=${i}`;
+//     fetch(starshipsRequest).then((response) => {
+//         return response.json();
+//     }).then((data) => {
+//         starshipsArray = starshipsArray.concat(data.results);
+//     })
+// }
