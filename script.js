@@ -18,20 +18,40 @@
 // }
 
 // Planets fetch
-let planetsArray = [];
+// let planetsArray = [];
 
-let request = `https://swapi.dev/api/planets/`;
-fetch(request).then((response) => {
+// let planetsRequest = `https://swapi.dev/api/planets/`;
+// fetch(planetsRequest).then((response) => {
+//     return response.json();
+// }).then((data) => {
+//     planetsArray = planetsArray.concat(data.results);
+// })
+
+// for (let i = 2; i < 7; i++) {
+//     let planetsRequest = `https://swapi.dev/api/planets/?page=${i}`;
+//     fetch(planetsRequest).then((response) => {
+//         return response.json();
+//     }).then((data) => {
+//         planetsArray = planetsArray.concat(data.results);
+//     })
+// }
+
+// Starships fetch
+
+let starshipsArray = [];
+
+let starshipsRequest = `https://swapi.dev/api/starships/`;
+fetch(starshipsRequest).then((response) => {
     return response.json();
 }).then((data) => {
-    planetsArray = planetsArray.concat(data.results);
+    starshipsArray = starshipsArray.concat(data.results);
 })
 
-for (let i = 2; i < 7; i++) {
-    let request = `https://swapi.dev/api/planets/?page=${i}`;
-    fetch(request).then((response) => {
+for (let i = 2; i < 5; i++) {
+    let starshipsRequest = `https://swapi.dev/api/starships/?page=${i}`;
+    fetch(starshipsRequest).then((response) => {
         return response.json();
     }).then((data) => {
-        planetsArray = planetsArray.concat(data.results);
+        starshipsArray = starshipsArray.concat(data.results);
     })
 }
