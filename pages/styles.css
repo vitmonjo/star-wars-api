@@ -81,10 +81,45 @@ body {
     background-color: #EEEEEE;
 }
 
+.card-organizer {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 5px;
+}
+
 .content-title {
     text-align: center;
     padding: 20px;
     font-size: 2.6rem;
+}
+
+.icon-img {
+    background-image: url(../images/icon.jpg);
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.card {
+    height: 220px;
+    width: 320px;
+    border: 1px solid #1F2738;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+}
+
+.pilot-name {
+    width: 320px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.2rem;
+    background-color: #1F2738;
+    color: white;
+    text-align: center;
 }
 
 }

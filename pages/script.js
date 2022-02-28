@@ -1,45 +1,102 @@
-// // People fetch
-// let peopleArray = [];
+// People then pilots fetch
 
-// let peopleRequest = `https://swapi.dev/api/people/`;
-// fetch(peopleRequest).then((response) => {
-//     return response.json();
-// }).then((data) => {
-//     peopleArray = peopleArray.concat(data.results);
-// })
+const cardOrganizer = document.querySelector('.card-organizer');
 
-// for (let i = 2; i < 10; i++) {
-//     let peopleRequest = `https://swapi.dev/api/people/?page=${i}`;
-//     fetch(peopleRequest).then((response) => {
-//         return response.json();
-//     }).then((data) => {
-//         peopleArray = peopleArray.concat(data.results);
-//     })
+// for (let i = 1; i < 10; i++) {
+//     fetch(`https://swapi.dev/api/people/?page=${i}`)
+//         .then((response) => {
+//             return response.json();
+//         })
+//         .then((data) => {
+//             peopleArray = peopleArray.concat(data.results)
+//         })
+//         .then(() => {
+//             pilots = peopleArray.filter(function (person) {
+//                 if (person.starships.length !== 0) {
+//                     return true;
+//                 }
+//             })
+//         })
 // }
 
-// const pilots = [];
+// for (let i = 0; i <= pilots.length - 1; i++) {
+//     const card = document.createElement('div');
+//     card.classList.add('card');
+//     const pilotName = document.createElement('div');
+//     pilotName.classList.add('pilot-name');
+//     pilotName.textContent = pilots[i].name;
+//     card.append(pilotName);
+//     cardOrganizer.append(card);
+// }
 
-// setTimeout(function() {
-//     peopleArray.filter(function(person) {
-//         if (person.starships.length !== 0) {
-//             pilots.push(person);
-//         }
-//     })
-// }, 5000)
+let peopleArray = [];
+let pilots = [];
 
-fetch(`https://swapi.dev/api/people/`)
-    .then(response => {
-        return response.json();
+const peopleFetching = async () => {
+    for (let i = 1; i < 10; i++) {
+        let response = await fetch(`https://swapi.dev/api/people/?page=${i}`);
+        let peopleData = await response.json();
+        peopleArray = peopleArray.concat(peopleData.results)
+    }
+    return peopleArray;
+}
+
+const addToPilots = async () => {
+    const data = await peopleFetching();
+    pilots = data.filter(function (person) {
+        if (person.starships.length !== 0) {
+            return true;
+        }
     })
-    .then(data => {
-        console.log(data.results);
-    })
+    return pilots;
+}
 
-// const pilots = peopleArray.filter(function(person) {
-//     if (person.starships.length !== 0) {
-//         return true;
-//     }
-// });
+const addToDisplay = async () => {
+    let pilots = await addToPilots();
+    for (let i = 0; i <= pilots.length - 1; i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        const pilotName = document.createElement('div');
+        pilotName.classList.add('pilot-name');
+        pilotName.textContent = pilots[i].name;
+        card.append(pilotName);
+        cardOrganizer.append(card);
+    }
+}
+
+addToDisplay();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Planets fetch
 // let planetsArray = [];
