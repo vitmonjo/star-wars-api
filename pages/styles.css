@@ -122,4 +122,11 @@ body {
     text-align: center;
 }
 
+.loading {
+    font-size: 4.0rem;
+    text-align: center;
+    padding: 100px;
+    /* color: #EEEEEE; */
+}
+
 }

@@ -1,6 +1,8 @@
 // People then pilots fetch
 
 const cardOrganizer = document.querySelector('.card-organizer');
+const loading = document.querySelector('.loading');
+
 
 // for (let i = 1; i < 10; i++) {
 //     fetch(`https://swapi.dev/api/people/?page=${i}`)
@@ -61,6 +63,7 @@ const addToDisplay = async () => {
         pilotName.textContent = pilots[i].name;
         card.append(pilotName);
         cardOrganizer.append(card);
+        loading.textContent = '';
     }
 }
 
