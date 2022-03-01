@@ -53,7 +53,7 @@ a:link, a:visited {
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: minmax(50px, 1fr) 10fr;
+    grid-template-rows: minmax(70px, 1fr) 10fr;
 }
 
 .header {
