@@ -36,7 +36,7 @@ Quanto ao processo de adicionar os elementos ao display, fiz uso do DOM (Documen
 
 // HTML e CSS
 
-No decorrer do desenvolvimento de sites, costumo testar como o projeto fica em tamanhos menores, testando assim sua responsividade para dispositivos móveis e a página estava inutilizável. Decidi então adicionar media queries, que adicionam configurações do CSS em determinados tamanhos de tela, neste caso, para dispositivos com no máximo 500px de largura. A página, portanto, também funciona de forma adaptada na maior parte dos celulares do mercado.
+No decorrer do desenvolvimento de sites, costumo testar como o projeto fica em tamanhos menores, testando assim sua responsividade para dispositivos móveis e percebi que a página estava inutilizável. Decidi então utilizar media queries, que adicionam configurações do CSS em determinados tamanhos de tela, neste caso, para dispositivos com no máximo 500px de largura. A página, portanto, também funciona de forma adaptada na maior parte dos celulares do mercado.
 
 Para a estruturação da página, utilizei CSS Grid e dividi a mesma em dois elementos: header e main. No header utilizo novamente CSS Grid para organizar as DIV's. Na versão mobile, também utilizei CSS Grid mas coloquei os itens em apenas uma coluna, assim posso aproveitar o formato retrato de celulares.
 
@@ -50,7 +50,7 @@ Conclusão
 
 Meu progresso e dificuldades podem ser acompanhados no histórico de commits deste trabalho: https://github.com/vitmonjo/star-wars-api/commits/main.
 
-Neste projeto, exerci ao máximo o exercício de solução de problemas e fortaleci de forma efetiva minha visão estratégica no desenvolvimento de aplicações. Pude aprofundar minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também o processo de aumentar a dinâmica e interatividade da página através do JavaScript. Um conhecimento que auxiliou bastante na confecção deste projeto e também é uma das minhas melhores ferramentas para estudar programação é o domínio da língua inglesa, fazendo com que a gama de resultados e problemas com soluções a serem encontrados aumentem exacerbadamente.
+Neste projeto, trabalhei ao máximo o exercício de solução de problemas e fortaleci de forma efetiva minha visão estratégica no desenvolvimento de aplicações. Pude aprofundar minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também o processo de aumentar a dinâmica e interatividade de páginas através do JavaScript. Um conhecimento que auxiliou bastante na confecção deste projeto e também é uma das minhas melhores ferramentas para estudar programação é o domínio da língua inglesa, fazendo com que a gama de resultados e problemas com soluções a serem consultados aumentem exacerbadamente.
 
 Minha expectativa ao estagiar no PREMIA é de ter a oportunidade de aprimorar meus conhecimentos e também contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada (CPC) e da Fundação CERTI como um todo. O contato com profissionais capacitados e participar de uma organização com um alto nível de comprometimento com a indústria de tecnologia também é um dos principais fatores para minha aplicação. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
 
