@@ -97,7 +97,7 @@ a:link, a:visited {
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: minmax(70px, 1fr) 10fr;
+    grid-template-rows: 72px 10fr;
 }
 
 .header {
