@@ -54,7 +54,7 @@ const addToDisplay = async () => {
         const pilotName = document.createElement('div');
         const placeholder = document.createElement('img');
         placeholder.classList.add('placeholder');
-        placeholder.src ="../../images/placeholder.jpeg";
+        placeholder.src = (pilotImageMap[pilots[i].name] || "../../images/placeholder.jpeg");
         pilotName.classList.add('element-name');
         pilotName.textContent = pilots[i].name;
         card.append(placeholder, pilotName);
