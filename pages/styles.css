@@ -83,6 +83,7 @@ a:link, a:visited {
     .placeholder {
         height: 100%;
         width: 100%;
+        overflow: hidden;
     }
 
     .loading {
