@@ -30,7 +30,7 @@ Ao trabalhar com a API, tive um problema de assincronicidade: não era possível
 
 Encontrar os pilotos dentro da API é a operação mais lenta, pois devo primeiramente formar um array com todas as pessoas, em seguida devo filtrar esse array para retirar somente as pessoas que possuem ao menos uma espaçonave, e por ultimo devo adicionar essa lista de pilotos para o display.
 
-Já que o processo de solicitação de dados da SWAPI leva em torno de alguns segundos, inseri uma DIV com o texto "LOADING..." que é removida assim que os cards são criados e adicionados ao display, dessa forma o usuário sabe que o conteúdo está carregando e que não há nenhum problema com o site.
+Já que o processo de solicitação de dados da SWAPI leva alguns segundos para terminar, inseri uma DIV com o texto "LOADING..." que é removida assim que os cards são criados e adicionados ao display, dessa forma o usuário sabe que o conteúdo está carregando e que não há nenhum problema com o site.
 
 Quanto ao processo de adicionar os elementos ao display, fiz uso do DOM (Document Object Model) para manipular a página de forma dinâmica. Assim que o processo de preencher o array com as informações necessárias, seja pilotos, espaçonaves ou planetas terminava, entrava em ação a função que criava, para cada elemento, um card com a imagem genérica, seguida do nome. O conjunto de cards é organizado através de CSS Grid com uma técnica que torna-os responsivos e dinâmicos, evitando assim potenciais transbordamentos ou excesso de itens.
 
@@ -38,9 +38,9 @@ Quanto ao processo de adicionar os elementos ao display, fiz uso do DOM (Documen
 
 No decorrer do desenvolvimento de sites, costumo testar como o projeto fica em tamanhos menores, testando assim sua responsividade para dispositivos móveis e a página estava inutilizável. Decidi então adicionar media queries, que adicionam configurações do CSS em determinados tamanhos de tela, neste caso, para dispositivos com no máximo 500px de largura. A página, portanto, também funciona de forma adaptada na maior parte dos celulares do mercado.
 
-Para a estruturação da página, utilizei CSS Grid e dividi a mesma em dois elementos: header e main. No header utilizo novamente CSS Grid para organizar as DIV's. Na versão mobile, também utilizei CSS Grid mas coloquei os itens em uma coluna apenas, para aproveitar o formato retrato de celulares.
+Para a estruturação da página, utilizei CSS Grid e dividi a mesma em dois elementos: header e main. No header utilizo novamente CSS Grid para organizar as DIV's. Na versão mobile, também utilizei CSS Grid mas coloquei os itens em apenas uma coluna, assim posso aproveitar o formato retrato de celulares.
 
-Na fonte, optei pelo uso da Distant Galaxy, que é uma fonte feita por fãs inspirada na fonte utilizada nos filmes. Infelizmente dois pilotos possuem acentos no nome que e não são suportados pela língua, fazendo com que a letra acentuada pareça um pouco menor, mas dentro das dezenas de resultados mostrados pela API, esta divergência passa quase que despercebida.
+Na fonte, optei pelo uso da Distant Galaxy, que é uma fonte feita por fãs inspirada na fonte utilizada nos filmes. Infelizmente, dois pilotos possuem acentos no nome que não são suportados pela língua, fazendo com que a letra acentuada pareça um pouco menor, mas dentro das dezenas de resultados mostrados pela API, esta divergência passa quase que despercebida.
 
 O wallpaper da versão de desktop não está na versão mobile pois possui um formato de paisagem (largura maior do que a altura), o que impede que a imagem preencha a tela sem ser duplicada ou esticada desproporcionalmente. Optei então pela cor #EEEEEE, presente no documento oficial do Desafio Técnico DEV.
 
@@ -52,7 +52,7 @@ Meu progresso e dificuldades podem ser acompanhados no histórico de commits des
 
 Neste projeto, exerci ao máximo o exercício de solução de problemas e fortaleci de forma efetiva minha visão estratégica no desenvolvimento de aplicações. Pude aprofundar minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também o processo de aumentar a dinâmica e interatividade da página através do JavaScript. Um conhecimento que auxiliou bastante na confecção deste projeto e também é uma das minhas melhores ferramentas para estudar programação é o domínio da língua inglesa, fazendo com que a gama de resultados e problemas com soluções a serem encontrados aumentem exacerbadamente.
 
-Minha expectativa ao estagiar no PREMIA é de ter a oportunidade de aprimorar meus conhecimentos e também contribuir de forma plena para o andamento dos processos do setor e da Fundação CERTI como um todo. O contato com profissionais capacitados e participar de uma organização com um alto nível de comprometimento com a indústria de tecnologia também é um dos principais fatores para minha aplicação. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
+Minha expectativa ao estagiar no PREMIA é de ter a oportunidade de aprimorar meus conhecimentos e também contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada(CPC) e da Fundação CERTI como um todo. O contato com profissionais capacitados e participar de uma organização com um alto nível de comprometimento com a indústria de tecnologia também é um dos principais fatores para minha aplicação. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
 
 GitHub: https://github.com/vitmonjo
 E-mail: vitmonjo@gmail.com
