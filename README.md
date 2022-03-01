@@ -1,28 +1,27 @@
-# star-wars-api
-Relatório de produção - João Vítor Monteiro
+# Relatório de produção - João Vítor Monteiro
 
-// Instruções de acesso
+## Instruções de acesso
 
-Opção 1 - Visualizar o projeto on-line
+### Opção 1 - Visualizar o projeto on-line
 
 Este trabalho está hospedado através da ferramenta "Pages" do GitHub que permite hospedar qualquer projeto gratuitamente através dos próprios servidores da empresa.
 
 Link:
 https://vitmonjo.github.io/star-wars-api/
 
-Opção 2 - Fazer o download do projeto
+### Opção 2 - Fazer o download do projeto
 
-2.1 - Acesse o repositório do projeto no meu perfil:
+#### 2.1 - Acesse o repositório do projeto no meu perfil:
 https://github.com/vitmonjo/star-wars-api
 
-2.2 - Clique no botão verde escrito "Code" e na última opção escrita "Download ZIP", caso haja alguma dúvida, a imagem a seguir mostra o processo:
+#### 2.2 - Clique no botão verde escrito "Code" e na última opção escrita "Download ZIP", caso haja alguma dúvida, a imagem a seguir mostra o processo:
 https://imgur.com/a/JGo6f7N
 
-2.3 - Extraia o arquivo com WinRAR ou 7-Zip.
+#### 2.3 - Extraia o arquivo com WinRAR ou 7-Zip.
 
-2.4 - Execute o site pelo arquivo "index.html".
+#### 2.4 - Execute o site pelo arquivo "index.html".
 
-// JavaScript
+## JavaScript
 
 Comecei trabalhando com as pessoas, que totalizam 82. De início, fazia a solicitação (fetch) de pessoa por pessoa, porém, percebi que essa é uma transferência desnecessária, uma vez que é possível solicitar uma página contendo 10 elementos. Dessa forma reduzi exponencialmente o tempo de carregamento.
 
@@ -32,9 +31,9 @@ Encontrar os pilotos dentro da API é a operação mais complexa, pois devo prim
 
 Já que o processo de solicitação de dados da SWAPI leva alguns segundos para terminar, inseri uma DIV com o texto "LOADING..." que é removida assim que os cards são criados e adicionados ao display, dessa forma o usuário sabe que o conteúdo está carregando e que não há nenhum problema com o site.
 
-Quanto ao processo de adicionar os elementos ao display, fiz uso do DOM (Document Object Model) para manipular a página de forma dinâmica. Assim que o processo de preencher o array com as informações necessárias, seja pilotos, espaçonaves ou planetas terminava, entrava em ação a função que criava, para cada elemento, um card com a imagem genérica, seguida do nome. O conjunto de cards é organizado através de CSS Grid com uma técnica que torna-os responsivos e dinâmicos, evitando assim potenciais transbordamentos ou excesso de itens.
+Quanto ao processo de adicionar os elementos ao display, fiz uso do DOM para manipular a página de forma dinâmica. Assim que o processo de preencher o array com as informações necessárias, seja pilotos, espaçonaves ou planetas terminava, entrava em ação a função que criava, para cada elemento, um card com a imagem genérica, seguida do nome. O conjunto de cards é organizado através de CSS Grid com uma técnica que torna-os responsivos e dinâmicos, evitando assim potenciais transbordamentos ou excesso de itens.
 
-// HTML e CSS
+## HTML e CSS
 
 No decorrer do desenvolvimento de sites, costumo testar como o projeto fica em tamanhos menores, testando assim sua responsividade para dispositivos móveis e percebi que a página estava inutilizável. Decidi então utilizar media queries, que adicionam configurações do CSS em determinados tamanhos de tela, neste caso, para dispositivos com no máximo 500px de largura. A página, portanto, também funciona de forma adaptada na maior parte dos celulares do mercado.
 
@@ -46,7 +45,7 @@ O wallpaper da versão de desktop não está na versão mobile pois possui um fo
 
 Para buscar organização, fiz o uso de subpastas. Cada subpasta possui o arquivo HTML correspondente ao elemento (pilots, starships e planets) e seu respectivo Script, decidi por particionar os arquivos Script para não sobrecarregar a SWAPI com solicitações paralelas. Todavia, todos estes 3 documentos dividem o mesmo arquivo CSS, uma vez que o processo de estilização deles seguem um padrão.
 
-Conclusão
+## Conclusão
 
 Meu progresso e dificuldades podem ser acompanhados no histórico de commits deste trabalho: https://github.com/vitmonjo/star-wars-api/commits/main.
 
@@ -54,6 +53,6 @@ Neste projeto aprofundei minha prática com assuntos que estudo e utilizo diaria
 
 Minha expectativa ao estagiar no PREMIA é de aprimorar meus conhecimentos e contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada (CPC) e da Fundação CERTI como um todo. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
 
-GitHub: https://github.com/vitmonjo
-E-mail: vitmonjo@gmail.com
-Telefone: (47) 99204-6868
+#### GitHub: https://github.com/vitmonjo
+#### E-mail: vitmonjo@gmail.com
+#### Telefone: (47) 99204-6868
