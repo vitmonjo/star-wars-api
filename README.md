@@ -28,7 +28,7 @@ Comecei trabalhando com as pessoas, que totalizam 82. De início, fazia a solici
 
 Ao trabalhar com a API, tive um problema de assincronicidade: não era possível trabalhar com os dados pois os mesmos demoravam alguns segundos para serem buscados. Para resolver isso, passei a utilizar Async/Await, dessa forma, as operações de filtragem e o processo de adicionar os dados tratados ao display seguiam uma ordem obrigatória que dependia do encerramento da operação anterior.
 
-Encontrar os pilotos dentro da API é a operação mais lenta, pois devo primeiramente formar um array com todas as pessoas, em seguida devo filtrar esse array para retirar somente as pessoas que possuem ao menos uma espaçonave, e por ultimo devo adicionar essa lista de pilotos para o display.
+Encontrar os pilotos dentro da API é a operação mais complexa, pois devo primeiramente formar um array com todas as pessoas, em seguida devo filtrar esse array para retirar somente as pessoas que possuem ao menos uma espaçonave, e por ultimo devo adicionar essa lista de pilotos para o display.
 
 Já que o processo de solicitação de dados da SWAPI leva alguns segundos para terminar, inseri uma DIV com o texto "LOADING..." que é removida assim que os cards são criados e adicionados ao display, dessa forma o usuário sabe que o conteúdo está carregando e que não há nenhum problema com o site.
 
@@ -50,9 +50,9 @@ Conclusão
 
 Meu progresso e dificuldades podem ser acompanhados no histórico de commits deste trabalho: https://github.com/vitmonjo/star-wars-api/commits/main.
 
-Neste projeto, trabalhei ao máximo o exercício de solução de problemas e fortaleci de forma efetiva minha visão estratégica no desenvolvimento de aplicações. Pude aprofundar minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também o processo de aumentar a dinâmica e interatividade de páginas através do JavaScript. Um conhecimento que auxiliou bastante na confecção deste projeto e também é uma das minhas melhores ferramentas para estudar programação é o domínio da língua inglesa, fazendo com que a gama de resultados e problemas com soluções a serem consultados aumentem exacerbadamente.
+Neste projeto aprofundei minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também interatividade através do JavaScript. Dominar o inglês auxiliou bastante nas pesquisas realizadas para a confecção deste trabalho.
 
-Minha expectativa ao estagiar no PREMIA é de ter a oportunidade de aprimorar meus conhecimentos e também contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada (CPC) e da Fundação CERTI como um todo. O contato com profissionais capacitados e participar de uma organização com um alto nível de comprometimento com a indústria de tecnologia também é um dos principais fatores para minha aplicação. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
+Minha expectativa ao estagiar no PREMIA é de aprimorar meus conhecimentos e contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada (CPC) e da Fundação CERTI como um todo. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
 
 GitHub: https://github.com/vitmonjo
 E-mail: vitmonjo@gmail.com
