@@ -1,5 +1,8 @@
 # Relatório de produção - João Vítor Monteiro
 
+## OBSERVAÇÃO:
+### A Star Wars API apresenta periodicamente momentos de instabilidade, fazendo com que as páginas levem muito mais tempo para carregar. Vale ressaltar que o tempo comum de carregamento testado em várias redes diferentes leva no máximo 5 segundos. Esse atraso pode ser comprovado mediante a consulta de dados no próprio site da SWAPI: https://swapi.dev/
+
 ## Instruções de acesso
 
 ### Opção 1 - Visualizar o projeto on-line
