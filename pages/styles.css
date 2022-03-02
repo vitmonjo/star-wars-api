@@ -157,6 +157,7 @@ body {
     background-color: #1F2738;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
 .element-name:hover, .card:hover {
