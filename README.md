@@ -47,15 +47,3 @@ Na fonte, optei pelo uso da Distant Galaxy, que é uma fonte feita por fãs insp
 O wallpaper da versão de desktop não está na versão mobile pois possui um formato de paisagem (largura maior do que a altura), o que impede que a imagem preencha a tela sem ser duplicada ou esticada desproporcionalmente. Optei então pela cor #EEEEEE, presente no documento oficial do Desafio Técnico DEV.
 
 Para buscar organização, fiz o uso de subpastas. Cada subpasta possui o arquivo HTML correspondente ao elemento (pilots, starships e planets) e seu respectivo Script, decidi por particionar os arquivos Script para não sobrecarregar a SWAPI com solicitações paralelas. Todavia, todos estes 3 documentos dividem o mesmo arquivo CSS, uma vez que o processo de estilização deles seguem um padrão.
-
-## Conclusão
-
-Meu progresso e dificuldades podem ser acompanhados no histórico de commits deste trabalho: https://github.com/vitmonjo/star-wars-api/commits/main.
-
-Neste projeto aprofundei minha prática com assuntos que estudo e utilizo diariamente como a estruturação de páginas com HTML, estilização através de CSS e também interatividade através do JavaScript. Dominar o inglês auxiliou bastante nas pesquisas realizadas para a confecção deste trabalho.
-
-Minha expectativa ao estagiar no PREMIA é de aprimorar meus conhecimentos e contribuir de forma plena para o andamento dos processos do Centro de Produção Cooperada (CPC) e da Fundação CERTI como um todo. Caso tenha restado alguma dúvida acerca do meu conhecimento e/ou abordagem, não hesite em entrar em contato.
-
-#### GitHub: https://github.com/vitmonjo
-#### E-mail: vitmonjo@gmail.com
-#### Telefone: (47) 99204-6868
