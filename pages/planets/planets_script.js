@@ -17,6 +17,35 @@ const planetsImageMap = {
     'Utapau': 'https://i.imgur.com/GEYax5y.jpg'
 }
 
+const countInstancesInLocalStorage = (string) => {
+    let counter = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        const currentStoredItem = localStorage.key(i);
+        if (String(currentStoredItem).includes(string)) counter++;
+    }
+    return counter;
+}
+
+const checkLocalStorage = () => {
+    return localStorage.getItem('PLANET-0');
+}
+
+const populateFromLocalStorage = () => {
+    for (let i = 0; i < countInstancesInLocalStorage('PLANET'); i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        const planetName = document.createElement('div');
+        const placeholder = document.createElement('img');
+        placeholder.classList.add('placeholder');
+        placeholder.src = (planetsImageMap[localStorage.getItem(`PLANET-${i}`)] || "../../images/placeholder.jpeg");
+        planetName.classList.add('element-name');
+        planetName.textContent = localStorage.getItem(`PLANET-${i}`);
+        card.append(placeholder, planetName);
+        cardOrganizer.append(card);
+        loading.textContent = '';        
+    }
+}
+
 const planetsFetching = async () => {
     for (let i = 1; i < 7; i++) {
         let response = await fetch(`https://swapi.dev/api/planets/?page=${i}`);
@@ -27,19 +56,26 @@ const planetsFetching = async () => {
 }
 
 const addToDisplay = async () => {
-    let planets = await planetsFetching();
-    for (let i = 0; i <= planets.length - 1; i++) {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        const planetName = document.createElement('div');
-        const placeholder = document.createElement('img');
-        placeholder.classList.add('placeholder');
-        placeholder.src = (planetsImageMap[planets[i].name] || "../../images/placeholder.jpeg");
-        planetName.classList.add('element-name');
-        planetName.textContent = planets[i].name;
-        card.append(placeholder, planetName);
-        cardOrganizer.append(card);
-        loading.textContent = '';
+    if (checkLocalStorage() === null) {
+        let planets = await planetsFetching();
+        for (let i = 0; i <= planets.length - 1; i++) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            const planetName = document.createElement('div');
+            const placeholder = document.createElement('img');
+            placeholder.classList.add('placeholder');
+            placeholder.src = (planetsImageMap[planets[i].name] || "../../images/placeholder.jpeg");
+            planetName.classList.add('element-name');
+            planetName.textContent = planets[i].name;
+            card.append(placeholder, planetName);
+            cardOrganizer.append(card);
+            loading.textContent = '';
+        }
+        for (planet in planetsArray) {
+            localStorage.setItem(`PLANET-${planet}`, `${planetsArray[planet].name}`);
+        }
+    } else {
+        populateFromLocalStorage();
     }
 }
 

@@ -17,6 +17,35 @@ const starshipsImageMap = {
     'Imperial shuttle': 'https://i.imgur.com/sHfsxFx.jpg'
 }
 
+const countInstancesInLocalStorage = (string) => {
+    let counter = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        const currentStoredItem = localStorage.key(i);
+        if (String(currentStoredItem).includes(string)) counter++;
+    }
+    return counter;
+}
+
+const checkLocalStorage = () => {
+    return localStorage.getItem('STARSHIP-0');
+}
+
+const populateFromLocalStorage = () => {
+    for (let i = 0; i < countInstancesInLocalStorage('STARSHIP'); i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        const planetName = document.createElement('div');
+        const placeholder = document.createElement('img');
+        placeholder.classList.add('placeholder');
+        placeholder.src = (starshipsImageMap[localStorage.getItem(`STARSHIP-${i}`)] || "../../images/placeholder.jpeg");
+        planetName.classList.add('element-name');
+        planetName.textContent = localStorage.getItem(`STARSHIP-${i}`);
+        card.append(placeholder, planetName);
+        cardOrganizer.append(card);
+        loading.textContent = '';        
+    }
+}
+
 const starshipsFetching = async () => {
     for (let i = 1; i < 5; i++) {
         let response = await fetch(`https://swapi.dev/api/starships/?page=${i}`);
@@ -27,19 +56,26 @@ const starshipsFetching = async () => {
 }
 
 const addToDisplay = async () => {
-    let starships = await starshipsFetching();
-    for (let i = 0; i <= starships.length - 1; i++) {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        const starshipName = document.createElement('div');
-        const placeholder = document.createElement('img');
-        placeholder.classList.add('placeholder');
-        placeholder.src = (starshipsImageMap[starships[i].name] || "../../images/placeholder.jpeg");
-        starshipName.classList.add('element-name');
-        starshipName.textContent = starships[i].name;
-        card.append(placeholder, starshipName);
-        cardOrganizer.append(card);
-        loading.textContent = '';
+    if (checkLocalStorage() === null) {
+        let starships = await starshipsFetching();
+        for (let i = 0; i <= starships.length - 1; i++) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            const starshipName = document.createElement('div');
+            const placeholder = document.createElement('img');
+            placeholder.classList.add('placeholder');
+            placeholder.src = (starshipsImageMap[starships[i].name] || "../../images/placeholder.jpeg");
+            starshipName.classList.add('element-name');
+            starshipName.textContent = starships[i].name;
+            card.append(placeholder, starshipName);
+            cardOrganizer.append(card);
+            loading.textContent = '';
+        }
+        for (starship in starshipsArray) {
+            localStorage.setItem(`STARSHIP-${starship}`, `${starshipsArray[starship].name}`);
+        }
+    } else {
+        populateFromLocalStorage();
     }
 }
 

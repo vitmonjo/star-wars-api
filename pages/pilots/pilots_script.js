@@ -27,6 +27,35 @@ const pilotImageMap = {
     'Grievous': 'https://i.imgur.com/seoI0lj.png',
 }
 
+const countInstancesInLocalStorage = (string) => {
+    let counter = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        const currentStoredItem = localStorage.key(i);
+        if (String(currentStoredItem).includes(string)) counter++;
+    }
+    return counter;
+}
+
+const checkLocalStorage = () => {
+    return localStorage.getItem('PILOT-0');
+}
+
+const populateFromLocalStorage = () => {
+    for (let i = 0; i < countInstancesInLocalStorage('PILOT'); i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        const pilotName = document.createElement('div');
+        const placeholder = document.createElement('img');
+        placeholder.classList.add('placeholder');
+        placeholder.src = (pilotImageMap[localStorage.getItem(`PILOT-${i}`)] || "../../images/placeholder.jpeg");
+        pilotName.classList.add('element-name');
+        pilotName.textContent = localStorage.getItem(`PILOT-${i}`);
+        card.append(placeholder, pilotName);
+        cardOrganizer.append(card);
+        loading.textContent = '';        
+    }
+}
+
 const peopleFetching = async () => {
     for (let i = 1; i < 10; i++) {
         let response = await fetch(`https://swapi.dev/api/people/?page=${i}`);
@@ -47,19 +76,26 @@ const addToPilots = async () => {
 }
 
 const addToDisplay = async () => {
-    let pilots = await addToPilots();
-    for (let i = 0; i <= pilots.length - 1; i++) {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        const pilotName = document.createElement('div');
-        const placeholder = document.createElement('img');
-        placeholder.classList.add('placeholder');
-        placeholder.src = (pilotImageMap[pilots[i].name] || "../../images/placeholder.jpeg");
-        pilotName.classList.add('element-name');
-        pilotName.textContent = pilots[i].name;
-        card.append(placeholder, pilotName);
-        cardOrganizer.append(card);
-        loading.textContent = '';
+    if (checkLocalStorage() === null) {
+        let pilots = await addToPilots();
+        for (let i = 0; i <= pilots.length - 1; i++) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            const pilotName = document.createElement('div');
+            const placeholder = document.createElement('img');
+            placeholder.classList.add('placeholder');
+            placeholder.src = (pilotImageMap[pilots[i].name] || "../../images/placeholder.jpeg");
+            pilotName.classList.add('element-name');
+            pilotName.textContent = pilots[i].name;
+            card.append(placeholder, pilotName);
+            cardOrganizer.append(card);
+            loading.textContent = '';
+        }
+        for (pilot in pilots) {
+            localStorage.setItem(`PILOT-${pilot}`, `${pilots[pilot].name}`);
+        }
+    } else {
+        populateFromLocalStorage();
     }
 }
 
