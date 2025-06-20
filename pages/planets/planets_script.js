@@ -42,16 +42,14 @@ const populateFromLocalStorage = () => {
         planetName.textContent = localStorage.getItem(`PLANET-${i}`);
         card.append(placeholder, planetName);
         cardOrganizer.append(card);
-        loading.textContent = '';        
+        loading.textContent = '';
     }
 }
 
 const planetsFetching = async () => {
-    for (let i = 1; i < 7; i++) {
-        let response = await fetch(`https://swapi.dev/api/planets/?page=${i}`);
-        let planetsData = await response.json();
-        planetsArray = planetsArray.concat(planetsData.results);
-    }
+    let response = await fetch(`https://swapi.info/api/planets`);
+    let planetsData = await response.json();
+    planetsArray = planetsArray.concat(planetsData);
     return planetsArray;
 }
 

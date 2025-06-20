@@ -52,16 +52,14 @@ const populateFromLocalStorage = () => {
         pilotName.textContent = localStorage.getItem(`PILOT-${i}`);
         card.append(placeholder, pilotName);
         cardOrganizer.append(card);
-        loading.textContent = '';        
+        loading.textContent = '';
     }
 }
 
 const peopleFetching = async () => {
-    for (let i = 1; i < 10; i++) {
-        let response = await fetch(`https://swapi.dev/api/people/?page=${i}`);
-        let peopleData = await response.json();
-        peopleArray = peopleArray.concat(peopleData.results)
-    }
+    let response = await fetch(`https://swapi.info/api/people`);
+    let peopleData = await response.json();
+    peopleArray = peopleArray.concat(peopleData)
     return peopleArray;
 }
 
